@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: '[app-servers]',
   standalone: false,
-  templateUrl: `./servers.component.html`,
+  templateUrl: './servers.component.html',
   styleUrl: './servers.component.css',
 })
 export class ServersComponent {
   allowNewServers = true;
-  newServerName: string = '';
+  newServerName: string = 'The first server';
+  serverCreationStatus: string = 'server was created, its name is ';
+  finalText: string = '';
 
   constructor() {
     setTimeout(() => {
@@ -17,10 +19,10 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    console.log('add server');
+    this.finalText = this.serverCreationStatus + this.newServerName;
   }
 
-  onChangeServerName(event) {
+  onChangeServerName(event: any) {
     this.newServerName = event.target.value;
   }
 }

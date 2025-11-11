@@ -1,5 +1,6 @@
-<input type="text" class="form-control" (input)="onChangeServerName($event)" />
-<p>{{ newServerName }}</p>
+<!-- <input type="text" class="form-control" (input)="onChangeServerName($event)" /> -->
+<input type="text" class="form-control" [(ngModel)]="newServerName" />
+<hr />
 <button
   class="btn btn-primary"
   [disabled]="allowNewServers"
@@ -7,5 +8,7 @@
 >
   Add server
 </button>
+<p></p>
+<p>{{ finalText }}</p>
 <app-server></app-server>
 <app-server></app-server>
